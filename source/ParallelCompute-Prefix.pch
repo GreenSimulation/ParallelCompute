@@ -1,0 +1,33 @@
+//
+// Prefix header for all source files of the 'ParallelCompute' target in the 'ParallelCompute' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
+
+
+
+extern "C"
+{
+    bool Init(void);
+    void Release(void);
+    unsigned int CreateContext(void);
+    unsigned int CreateCommendQueue(unsigned int context_key);
+    unsigned int CreateBufferObject(unsigned int context_key, int rw_mode, int mem_count, int type_size);
+    unsigned int CreateProgramWithSource(unsigned int context_key, char* source_path);
+    unsigned int CreateKernel(unsigned int program_key, char* entry_function);
+    void SetKernelArgFormObject(unsigned int kernel_key, int arg_index, unsigned int memory_key);
+    void SetKernelArg(unsigned int kernel_key, int arg_index, int mem_size, void* data);
+    void EnqueueWriteBuffer(unsigned int commend_key, unsigned int memory_key, int data_size, void* data);
+    void EnqueueReadBuffer(unsigned int commend_key, unsigned int memory_key, int data_size, void* data);
+    void EnqueueTask(unsigned int commend_key, unsigned int kernel_key);
+    void EnqueueNDRangeKernel(unsigned int commend_key, unsigned int kernel_key, int globle_size, int local_size);
+    void Flush(unsigned int commend_key);
+    void Finish(unsigned int commend_key);
+    void ReleaseKernel(unsigned int kernel_key);
+    void ReleaseProgram(unsigned int program_key);
+    void ReleaseMemObject(unsigned int memory_key);
+    void ReleaseCommandQueue(unsigned int commend_key);
+    void ReleaseContext(unsigned int context_key);
+}

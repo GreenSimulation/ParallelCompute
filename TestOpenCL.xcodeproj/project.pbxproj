@@ -1,0 +1,247 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E2DB70D2191B1597003FEB2C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2DB70D1191B1597003FEB2C /* main.cpp */; };
+		E2DB70DB191B1905003FEB2C /* OpenCL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2DB70DA191B1905003FEB2C /* OpenCL.framework */; };
+		E2DB70DD191B199D003FEB2C /* hello.cl in Sources */ = {isa = PBXBuildFile; fileRef = E2DB70DC191B199D003FEB2C /* hello.cl */; };
+		E2DB70EA191B24AC003FEB2C /* entry_point.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2DB70E6191B24AC003FEB2C /* entry_point.cpp */; };
+		E2DB70EB191B24AC003FEB2C /* util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2DB70E8191B24AC003FEB2C /* util.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E2DB70CC191B1597003FEB2C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		E2DB70CE191B1597003FEB2C /* TestOpenCL */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TestOpenCL; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2DB70D1191B1597003FEB2C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		E2DB70DA191B1905003FEB2C /* OpenCL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenCL.framework; path = System/Library/Frameworks/OpenCL.framework; sourceTree = SDKROOT; };
+		E2DB70DC191B199D003FEB2C /* hello.cl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.opencl; path = hello.cl; sourceTree = "<group>"; };
+		E2DB70E6191B24AC003FEB2C /* entry_point.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = entry_point.cpp; sourceTree = "<group>"; };
+		E2DB70E7191B24AC003FEB2C /* ParallelCompute-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ParallelCompute-Prefix.pch"; sourceTree = "<group>"; };
+		E2DB70E8191B24AC003FEB2C /* util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = util.cpp; sourceTree = "<group>"; };
+		E2DB70E9191B24AC003FEB2C /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E2DB70CB191B1597003FEB2C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2DB70DB191B1905003FEB2C /* OpenCL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E2DB70C5191B1597003FEB2C = {
+			isa = PBXGroup;
+			children = (
+				E2DB70DA191B1905003FEB2C /* OpenCL.framework */,
+				E2DB70D0191B1597003FEB2C /* TestOpenCL */,
+				E2DB70E5191B2493003FEB2C /* source */,
+				E2DB70CF191B1597003FEB2C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E2DB70CF191B1597003FEB2C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E2DB70CE191B1597003FEB2C /* TestOpenCL */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E2DB70D0191B1597003FEB2C /* TestOpenCL */ = {
+			isa = PBXGroup;
+			children = (
+				E2DB70DC191B199D003FEB2C /* hello.cl */,
+				E2DB70D1191B1597003FEB2C /* main.cpp */,
+			);
+			name = TestOpenCL;
+			path = test;
+			sourceTree = "<group>";
+		};
+		E2DB70E5191B2493003FEB2C /* source */ = {
+			isa = PBXGroup;
+			children = (
+				E2DB70E6191B24AC003FEB2C /* entry_point.cpp */,
+				E2DB70E7191B24AC003FEB2C /* ParallelCompute-Prefix.pch */,
+				E2DB70E8191B24AC003FEB2C /* util.cpp */,
+				E2DB70E9191B24AC003FEB2C /* util.h */,
+			);
+			path = source;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E2DB70CD191B1597003FEB2C /* TestOpenCL */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E2DB70D7191B1597003FEB2C /* Build configuration list for PBXNativeTarget "TestOpenCL" */;
+			buildPhases = (
+				E2DB70CA191B1597003FEB2C /* Sources */,
+				E2DB70CB191B1597003FEB2C /* Frameworks */,
+				E2DB70CC191B1597003FEB2C /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TestOpenCL;
+			productName = TestOpenCL;
+			productReference = E2DB70CE191B1597003FEB2C /* TestOpenCL */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E2DB70C6191B1597003FEB2C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = Macintosh;
+			};
+			buildConfigurationList = E2DB70C9191B1597003FEB2C /* Build configuration list for PBXProject "TestOpenCL" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E2DB70C5191B1597003FEB2C;
+			productRefGroup = E2DB70CF191B1597003FEB2C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E2DB70CD191B1597003FEB2C /* TestOpenCL */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E2DB70CA191B1597003FEB2C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2DB70D2191B1597003FEB2C /* main.cpp in Sources */,
+				E2DB70DD191B199D003FEB2C /* hello.cl in Sources */,
+				E2DB70EA191B24AC003FEB2C /* entry_point.cpp in Sources */,
+				E2DB70EB191B24AC003FEB2C /* util.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		E2DB70D5191B1597003FEB2C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		E2DB70D6191B1597003FEB2C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		E2DB70D8191B1597003FEB2C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E2DB70D9191B1597003FEB2C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E2DB70C9191B1597003FEB2C /* Build configuration list for PBXProject "TestOpenCL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2DB70D5191B1597003FEB2C /* Debug */,
+				E2DB70D6191B1597003FEB2C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E2DB70D7191B1597003FEB2C /* Build configuration list for PBXNativeTarget "TestOpenCL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2DB70D8191B1597003FEB2C /* Debug */,
+				E2DB70D9191B1597003FEB2C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E2DB70C6191B1597003FEB2C /* Project object */;
+}
