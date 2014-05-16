@@ -7,11 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E270ADEC192484AC00CEBB64 /* export.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E270ADEB192484AC00CEBB64 /* export.cpp */; };
+		E270ADF11924863000CEBB64 /* context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E270ADEF1924863000CEBB64 /* context.cpp */; };
+		E270ADF419248B7800CEBB64 /* device.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E270ADF219248B7800CEBB64 /* device.cpp */; };
+		E270ADF71924A43700CEBB64 /* command_queue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E270ADF51924A43700CEBB64 /* command_queue.cpp */; };
+		E270ADFA1924B27E00CEBB64 /* memory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E270ADF81924B27E00CEBB64 /* memory.cpp */; };
+		E270ADFD1924B94D00CEBB64 /* program.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E270ADFB1924B94D00CEBB64 /* program.cpp */; };
 		E2DB70D2191B1597003FEB2C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2DB70D1191B1597003FEB2C /* main.cpp */; };
 		E2DB70DB191B1905003FEB2C /* OpenCL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2DB70DA191B1905003FEB2C /* OpenCL.framework */; };
 		E2DB70DD191B199D003FEB2C /* hello.cl in Sources */ = {isa = PBXBuildFile; fileRef = E2DB70DC191B199D003FEB2C /* hello.cl */; };
-		E2DB70EA191B24AC003FEB2C /* entry_point.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2DB70E6191B24AC003FEB2C /* entry_point.cpp */; };
-		E2DB70EB191B24AC003FEB2C /* util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2DB70E8191B24AC003FEB2C /* util.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,14 +31,23 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E270ADEB192484AC00CEBB64 /* export.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = export.cpp; sourceTree = "<group>"; };
+		E270ADEE192484C200CEBB64 /* export.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = export.h; sourceTree = "<group>"; };
+		E270ADEF1924863000CEBB64 /* context.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = context.cpp; sourceTree = "<group>"; };
+		E270ADF01924863000CEBB64 /* context.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = context.h; sourceTree = "<group>"; };
+		E270ADF219248B7800CEBB64 /* device.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = device.cpp; sourceTree = "<group>"; };
+		E270ADF319248B7800CEBB64 /* device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = device.h; sourceTree = "<group>"; };
+		E270ADF51924A43700CEBB64 /* command_queue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = command_queue.cpp; sourceTree = "<group>"; };
+		E270ADF61924A43700CEBB64 /* command_queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = command_queue.h; sourceTree = "<group>"; };
+		E270ADF81924B27E00CEBB64 /* memory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = memory.cpp; sourceTree = "<group>"; };
+		E270ADF91924B27E00CEBB64 /* memory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = memory.h; sourceTree = "<group>"; };
+		E270ADFB1924B94D00CEBB64 /* program.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = program.cpp; sourceTree = "<group>"; };
+		E270ADFC1924B94D00CEBB64 /* program.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = program.h; sourceTree = "<group>"; };
 		E2DB70CE191B1597003FEB2C /* TestOpenCL */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TestOpenCL; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2DB70D1191B1597003FEB2C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		E2DB70DA191B1905003FEB2C /* OpenCL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenCL.framework; path = System/Library/Frameworks/OpenCL.framework; sourceTree = SDKROOT; };
 		E2DB70DC191B199D003FEB2C /* hello.cl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.opencl; path = hello.cl; sourceTree = "<group>"; };
-		E2DB70E6191B24AC003FEB2C /* entry_point.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = entry_point.cpp; sourceTree = "<group>"; };
 		E2DB70E7191B24AC003FEB2C /* ParallelCompute-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ParallelCompute-Prefix.pch"; sourceTree = "<group>"; };
-		E2DB70E8191B24AC003FEB2C /* util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = util.cpp; sourceTree = "<group>"; };
-		E2DB70E9191B24AC003FEB2C /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,10 +93,19 @@
 		E2DB70E5191B2493003FEB2C /* source */ = {
 			isa = PBXGroup;
 			children = (
-				E2DB70E6191B24AC003FEB2C /* entry_point.cpp */,
 				E2DB70E7191B24AC003FEB2C /* ParallelCompute-Prefix.pch */,
-				E2DB70E8191B24AC003FEB2C /* util.cpp */,
-				E2DB70E9191B24AC003FEB2C /* util.h */,
+				E270ADEB192484AC00CEBB64 /* export.cpp */,
+				E270ADEE192484C200CEBB64 /* export.h */,
+				E270ADEF1924863000CEBB64 /* context.cpp */,
+				E270ADF01924863000CEBB64 /* context.h */,
+				E270ADF219248B7800CEBB64 /* device.cpp */,
+				E270ADF319248B7800CEBB64 /* device.h */,
+				E270ADF51924A43700CEBB64 /* command_queue.cpp */,
+				E270ADF61924A43700CEBB64 /* command_queue.h */,
+				E270ADF81924B27E00CEBB64 /* memory.cpp */,
+				E270ADF91924B27E00CEBB64 /* memory.h */,
+				E270ADFB1924B94D00CEBB64 /* program.cpp */,
+				E270ADFC1924B94D00CEBB64 /* program.h */,
 			);
 			path = source;
 			sourceTree = "<group>";
@@ -141,8 +163,12 @@
 			files = (
 				E2DB70D2191B1597003FEB2C /* main.cpp in Sources */,
 				E2DB70DD191B199D003FEB2C /* hello.cl in Sources */,
-				E2DB70EA191B24AC003FEB2C /* entry_point.cpp in Sources */,
-				E2DB70EB191B24AC003FEB2C /* util.cpp in Sources */,
+				E270ADEC192484AC00CEBB64 /* export.cpp in Sources */,
+				E270ADF11924863000CEBB64 /* context.cpp in Sources */,
+				E270ADF419248B7800CEBB64 /* device.cpp in Sources */,
+				E270ADF71924A43700CEBB64 /* command_queue.cpp in Sources */,
+				E270ADFA1924B27E00CEBB64 /* memory.cpp in Sources */,
+				E270ADFD1924B94D00CEBB64 /* program.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
