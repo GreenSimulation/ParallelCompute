@@ -9,13 +9,13 @@
 #include <OpenCL/OpenCL.h>
 #include <map>
 
-#include "export.h"
-
 #include "device.h"
 #include "context.h"
 #include "command_queue.h"
 #include "memory.h"
 #include "program.h"
+
+#include "export.h"
 
 using namespace ParallelCompute;
 
@@ -47,6 +47,38 @@ bool InitOpenCL(void)
 
 void ReleaseOpenCL(void)
 {
+    for (auto it = ContextArray.begin(); it != ContextArray.end(); ++it ) {
+        it->second->release();
+        delete it->second;
+    }
+    
+    std::map<uint, Context*> empty1;
+    ContextArray.swap(empty1);
+    
+    for (auto it = CommandQueueArray.begin(); it != CommandQueueArray.end(); ++it ) {
+        it->second->release();
+        delete it->second;
+    }
+    
+    std::map<uint, CommandQueue*> empty2;
+    CommandQueueArray.swap(empty2);
+    
+    for (auto it = ProgramArray.begin(); it != ProgramArray.end(); ++it ) {
+        it->second->release();
+        delete it->second;
+    }
+    
+    std::map<uint, Program*> empty3;
+    ProgramArray.swap(empty3);
+    
+    for (auto it = MemoryArray.begin(); it != MemoryArray.end(); ++it ) {
+        it->second->release();
+        delete it->second;
+    }
+    
+    std::map<uint, Memory*> empty4;
+    MemoryArray.swap(empty4);
+    
     device->release();
     delete device;
     

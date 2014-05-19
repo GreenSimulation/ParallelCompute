@@ -9,7 +9,7 @@
 #ifndef TestOpenCL_export_h
 #define TestOpenCL_export_h
 
-typedef unsigned int  uint;
+//typedef unsigned int  uint;
 typedef unsigned long ulong;
 
 extern "C"

@@ -9,9 +9,13 @@
 /* Begin PBXBuildFile section */
 		E2555E2F1913978D0059BD88 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2555E2E1913978D0059BD88 /* CoreFoundation.framework */; };
 		E2555E351913978D0059BD88 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E2555E331913978D0059BD88 /* InfoPlist.strings */; };
-		E2555E4219139BB50059BD88 /* entry_point.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2555E4119139BB50059BD88 /* entry_point.cpp */; };
 		E2555E441919CBC50059BD88 /* OpenCL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2555E431919CBC50059BD88 /* OpenCL.framework */; };
-		E2555E46191A08A50059BD88 /* util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2555E45191A08A50059BD88 /* util.cpp */; };
+		E2D27DDA19299DD20053FC8E /* command_queue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2D27DCE19299DD20053FC8E /* command_queue.cpp */; };
+		E2D27DDB19299DD20053FC8E /* context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2D27DD019299DD20053FC8E /* context.cpp */; };
+		E2D27DDC19299DD20053FC8E /* device.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2D27DD219299DD20053FC8E /* device.cpp */; };
+		E2D27DDD19299DD20053FC8E /* export.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2D27DD419299DD20053FC8E /* export.cpp */; };
+		E2D27DDE19299DD20053FC8E /* memory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2D27DD619299DD20053FC8E /* memory.cpp */; };
+		E2D27DDF19299DD20053FC8E /* program.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2D27DD819299DD20053FC8E /* program.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +24,19 @@
 		E2555E321913978D0059BD88 /* ParallelCompute-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ParallelCompute-Info.plist"; sourceTree = "<group>"; };
 		E2555E341913978D0059BD88 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E2555E361913978D0059BD88 /* ParallelCompute-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ParallelCompute-Prefix.pch"; sourceTree = "<group>"; };
-		E2555E4119139BB50059BD88 /* entry_point.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = entry_point.cpp; sourceTree = "<group>"; };
 		E2555E431919CBC50059BD88 /* OpenCL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenCL.framework; path = System/Library/Frameworks/OpenCL.framework; sourceTree = SDKROOT; };
-		E2555E45191A08A50059BD88 /* util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = util.cpp; sourceTree = "<group>"; };
-		E2555E47191A08B40059BD88 /* util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
+		E2D27DCE19299DD20053FC8E /* command_queue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = command_queue.cpp; sourceTree = "<group>"; };
+		E2D27DCF19299DD20053FC8E /* command_queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = command_queue.h; sourceTree = "<group>"; };
+		E2D27DD019299DD20053FC8E /* context.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = context.cpp; sourceTree = "<group>"; };
+		E2D27DD119299DD20053FC8E /* context.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = context.h; sourceTree = "<group>"; };
+		E2D27DD219299DD20053FC8E /* device.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = device.cpp; sourceTree = "<group>"; };
+		E2D27DD319299DD20053FC8E /* device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = device.h; sourceTree = "<group>"; };
+		E2D27DD419299DD20053FC8E /* export.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = export.cpp; sourceTree = "<group>"; };
+		E2D27DD519299DD20053FC8E /* export.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = export.h; sourceTree = "<group>"; };
+		E2D27DD619299DD20053FC8E /* memory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = memory.cpp; sourceTree = "<group>"; };
+		E2D27DD719299DD20053FC8E /* memory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = memory.h; sourceTree = "<group>"; };
+		E2D27DD819299DD20053FC8E /* program.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = program.cpp; sourceTree = "<group>"; };
+		E2D27DD919299DD20053FC8E /* program.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = program.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,9 +101,18 @@
 		E2555E3C1913981A0059BD88 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				E2555E4119139BB50059BD88 /* entry_point.cpp */,
-				E2555E45191A08A50059BD88 /* util.cpp */,
-				E2555E47191A08B40059BD88 /* util.h */,
+				E2D27DCE19299DD20053FC8E /* command_queue.cpp */,
+				E2D27DCF19299DD20053FC8E /* command_queue.h */,
+				E2D27DD019299DD20053FC8E /* context.cpp */,
+				E2D27DD119299DD20053FC8E /* context.h */,
+				E2D27DD219299DD20053FC8E /* device.cpp */,
+				E2D27DD319299DD20053FC8E /* device.h */,
+				E2D27DD419299DD20053FC8E /* export.cpp */,
+				E2D27DD519299DD20053FC8E /* export.h */,
+				E2D27DD619299DD20053FC8E /* memory.cpp */,
+				E2D27DD719299DD20053FC8E /* memory.h */,
+				E2D27DD819299DD20053FC8E /* program.cpp */,
+				E2D27DD919299DD20053FC8E /* program.h */,
 			);
 			name = Source;
 			path = source;
@@ -158,8 +180,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2555E4219139BB50059BD88 /* entry_point.cpp in Sources */,
-				E2555E46191A08A50059BD88 /* util.cpp in Sources */,
+				E2D27DDA19299DD20053FC8E /* command_queue.cpp in Sources */,
+				E2D27DDB19299DD20053FC8E /* context.cpp in Sources */,
+				E2D27DDC19299DD20053FC8E /* device.cpp in Sources */,
+				E2D27DDD19299DD20053FC8E /* export.cpp in Sources */,
+				E2D27DDE19299DD20053FC8E /* memory.cpp in Sources */,
+				E2D27DDF19299DD20053FC8E /* program.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

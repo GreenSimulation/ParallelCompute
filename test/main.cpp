@@ -40,16 +40,16 @@ int main()
     std::string code = buffer;
     clock_t start_time, end_time;
     
-    int size_x     = 256;
-    int size_y     = 256;
-    int size_z     = 256;
+    int size_x     = 1024;
+    int size_y     = 1024;
+    int size_z     = 30;
     int array_size = size_x*size_y*size_z;
     int test_run   = 7680;
     
     float* test1  = (float*)malloc(size_x*size_y*size_z*sizeof(float));
     float* test2  = (float*)malloc(size_x*size_y*size_z*sizeof(float));
     
-    ulong  global[] = {256, 256, 256};
+    ulong  global[] = {1024, 1024, 30};
     ulong  local[]  = {16, 16, 1};
     
     clock_t run_time = 0;
