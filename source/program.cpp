@@ -29,9 +29,11 @@ cl_kernel Program::kernel(void) const
 
 bool Program::initialization(char* kernel_name, const char** source_str, const size_t* source_size)
 {
-    cl_context   context   = _context->context();
-    cl_device_id device_id = _context->device();
-    cl_int       result    = 0;
+    cl_context      context   = _context->context();
+    cl_device_id    device_id = _context->device();
+    cl_int          result    = 0;
+    
+    char buf[2048];
     
     _program = clCreateProgramWithSource(context, 1, source_str, source_size, &result);
     
@@ -43,6 +45,24 @@ bool Program::initialization(char* kernel_name, const char** source_str, const s
             
             return SUCCESS(result, "create kerenl");
         }
+        
+        cl_build_status status;
+        size_t          log_size;
+        
+        clGetProgramBuildInfo(_program, device_id, CL_PROGRAM_BUILD_STATUS, sizeof(cl_build_status), (void*)&status, NULL);
+        printf("Build Status: %d\n", status);
+        
+        clGetProgramBuildInfo(_program, device_id, CL_PROGRAM_BUILD_OPTIONS, 2048, buf, NULL);
+        printf("Build Options: %s\n", buf);
+        
+        
+        clGetProgramBuildInfo(_program, device_id, CL_PROGRAM_BUILD_LOG, 0, NULL, &log_size);
+        char *log = (char *) malloc(log_size);
+        
+        clGetProgramBuildInfo(_program, device_id, CL_PROGRAM_BUILD_LOG, log_size, log, NULL);
+        printf("Build Log: %s\n", log);
+        
+        free(log);
     }
     
     return false;
