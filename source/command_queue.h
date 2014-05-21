@@ -47,7 +47,7 @@ namespace ParallelCompute
         
         void program(const int&& index, Program* program);
         
-        void execute(int dim_count, ulong* global_size, ulong* local_size);
+        void execute(int dim_count, uint* global_size, uint* local_size);
         
     public:
         Program* create_program(void);

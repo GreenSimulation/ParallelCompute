@@ -47,7 +47,7 @@ namespace ParallelCompute
         
     public:
         void copy_in(ulong array_count, ulong object_size, void* array);
-        void copy_out(ulong arrya_count, ulong object_size, void* array);
+        int copy_out(ulong arrya_count, ulong object_size, void* array);
         
     private:
         cl_mem_flags convert(const ACCESS_MODE& mode);

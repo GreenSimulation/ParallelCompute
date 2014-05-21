@@ -59,9 +59,12 @@ void Program::release(void)
     }
 }
 
-bool Program::setMemoryObject(uint index, Memory* memory)
+int Program::setMemoryObject(uint index, Memory* memory)
 {
     cl_mem memory_object = memory->memory();
     
-    return SUCCESS(clSetKernelArg(_kernel, index, sizeof(cl_mem), &memory_object), "set kernel arg");
+    int result = clSetKernelArg(_kernel, index, sizeof(cl_mem), &memory_object);
+    SUCCESS(result, "set kernel arg");
+    
+    return result;
 }

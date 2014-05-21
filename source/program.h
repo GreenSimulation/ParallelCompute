@@ -41,7 +41,7 @@ namespace ParallelCompute
         bool initialization(char* kernel_name, const char** source_str, const size_t* source_size);
         void release(void);
         
-        bool setMemoryObject(uint index, Memory* memory);
+        int setMemoryObject(uint index, Memory* memory);
     };
 }
 

@@ -7,6 +7,7 @@
 //
 
 #include <OpenCL/OpenCL.h>
+#include <unistd.h>
 #include <map>
 
 #include "device.h"
@@ -26,6 +27,8 @@ std::map<uint, CommandQueue*>   CommandQueueArray;
 std::map<uint, Program*>        ProgramArray;
 std::map<uint, Memory*>         MemoryArray;
 
+char stdout_buffer[2048];
+
 unsigned int GenerateKey(void)
 {
     static unsigned int NextID = 0;
@@ -34,10 +37,15 @@ unsigned int GenerateKey(void)
     return NextID;
 }
 
-bool InitOpenCL(void)
+bool InitOpenCL(bool debug_output, char* file_path)
 {
     if( device == nullptr ) {
         device = new Device();
+        
+        if( debug_output ) {
+            freopen(file_path, "w", stdout);
+        }
+        
         return device->initialization();
     }
     else {
@@ -83,10 +91,15 @@ void ReleaseOpenCL(void)
     delete device;
     
     device = nullptr;
+    
+    printf("Safety Exeute!\n");
+    fflush(stdout);
 }
 
 uint CreateContext(int device_type)
 {
+    printf("Argument Chack: CreateContext(%d)\n", device_type);
+    
     Context* context = device->create_context((Device::COMPUTE_MODE)device_type);
     uint     key     = GenerateKey();
     
@@ -99,6 +112,8 @@ uint CreateContext(int device_type)
 
 uint CreateCommandQueue(uint context, uint queue_size)
 {
+    printf("Argument Chack: CreateCommandQueue(%d, %d)\n", context, queue_size);
+    
     auto it = ContextArray.find(context);
     
     if( it != ContextArray.end() ) {
@@ -116,19 +131,22 @@ uint CreateCommandQueue(uint context, uint queue_size)
     return 0;
 }
 
-uint CreateProgramWithSource(uint context, const char* kernel_name, const char* source, ulong length)
+uint CreateProgramWithSource(uint context, const char* kernel_name, const char* source, uint length)
 {
+    printf("Argument Chack: CreateProgramWithSource(%d, %s, %s, %d)\n", context, kernel_name, source, length);
+    
     auto it = CommandQueueArray.find(context);
     
     if( it != CommandQueueArray.end() ) {
         Program* program = it->second->create_program();
         uint     key     = GenerateKey();
+
+        size_t length2 = (size_t)length;
         
-        program->initialization((char*)kernel_name, (const char**)&source, &length);
-        
-        ProgramArray.insert(std::make_pair(key, program));
-        
-        return key;
+        if (program->initialization((char*)kernel_name, (const char**)&source, (size_t*)&length2) ) {
+            ProgramArray.insert(std::make_pair(key, program));
+            return key;
+        }
     }
     
     return 0;
@@ -139,8 +157,10 @@ uint CreateProgramFile(uint context, char* file_name)
     return 0;
 }
 
-uint CreateMemoryObject(uint command_queue, int mode, ulong array_count, ulong memory_count)
+uint CreateMemoryObject(uint command_queue, int mode, uint array_count, uint memory_count)
 {
+    printf("Argument Chack: CreateMemoryObject(%d, %d, %d, %d)\n", command_queue, mode, array_count, memory_count);
+    
     auto it = CommandQueueArray.find(command_queue);
     
     if( it != CommandQueueArray.end() ) {
@@ -199,6 +219,8 @@ void DeleteMemoryObject(uint memory)
 
 void SetProgramArg(uint program, uint index, uint mem)
 {
+    printf("Argument Chack: SetProgramArg(%d, %d, %d)\n", program, index, mem);
+    
     auto it_program = ProgramArray.find(program);
     auto it_mem     = MemoryArray.find(mem);
     
@@ -209,6 +231,8 @@ void SetProgramArg(uint program, uint index, uint mem)
 
 void AddCommandQueue(uint command_queue, uint order_index, uint program)
 {
+    printf("Argument Chack: AddCommandQueue(%d, %d, %d)\n", command_queue, order_index, program);
+    
     auto it_command = CommandQueueArray.find(command_queue);
     auto it_program = ProgramArray.find(program);
     
@@ -217,8 +241,10 @@ void AddCommandQueue(uint command_queue, uint order_index, uint program)
     }
 }
 
-void WriteMemory(uint mem, ulong array_size, ulong object_size, void* array)
+void WriteMemory(uint mem, uint array_size, uint object_size, void* array)
 {
+    printf("Argument Chack: WriteMemory(%d, %d, %d, %p)\n", mem, array_size, object_size, array);
+    
     auto it = MemoryArray.find(mem);
     
     if ( it != MemoryArray.end() ) {
@@ -226,8 +252,10 @@ void WriteMemory(uint mem, ulong array_size, ulong object_size, void* array)
     }
 }
 
-void ReadMemory(uint mem, ulong array_size, ulong object_size, void* array)
+void ReadMemory(uint mem, uint array_size, uint object_size, void* array)
 {
+    printf("Argument Chack: ReadMemory(%d, %d, %d, %p)\n", mem, array_size, object_size, array);
+    
     auto it = MemoryArray.find(mem);
     
     if ( it != MemoryArray.end() ) {
@@ -235,8 +263,10 @@ void ReadMemory(uint mem, ulong array_size, ulong object_size, void* array)
     }
 }
 
-void Execute(uint command_queue, int dim_count, ulong* global_size, ulong* local_size)
+void Execute(uint command_queue, int dim_count, uint* global_size, uint* local_size)
 {
+    printf("Argument Chack: Execute(%d, %d, [%d, %d, %d], [%d, %d, %d])\n", command_queue, dim_count, global_size[0], global_size[1], global_size[2], local_size[0], local_size[1], local_size[2]);
+    
     auto it = CommandQueueArray.find(command_queue);
     
     if( it != CommandQueueArray.end() ) {

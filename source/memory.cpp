@@ -5,6 +5,7 @@
 //  Created by Macintosh on 14. 5. 15..
 //  Copyright (c) 2014년 Macintosh. All rights reserved.
 //
+#include <string>
 
 #include "device.h"
 
@@ -24,13 +25,15 @@ cl_mem Memory::memory(void) const
 
 bool Memory::initialization(const ACCESS_MODE&& mode, const ulong& array_count, const ulong& memory_count)
 {
+    char         buf[20];
     cl_context   context = _context->context();
     cl_mem_flags flags   = this->convert(std::move(mode));
     cl_int       result  = 0;
     
     _mem_object = clCreateBuffer(context, flags, array_count*memory_count, NULL, &result);
 
-    if( !SUCCESS(result, "create buffer") ) {
+    sprintf(buf, "%ld", array_count*memory_count);
+    if( !SUCCESS(result, std::string("create buffer : ")+buf) ) {
         return false;
     }
     
@@ -52,11 +55,11 @@ void Memory::copy_in(ulong array_count, ulong object_size, void* array)
     clEnqueueWriteBuffer(queue, _mem_object, CL_TRUE, 0, array_count*object_size, array, 0, NULL, NULL);
 }
 
-void Memory::copy_out(ulong array_count, ulong object_size, void* array)
+int Memory::copy_out(ulong array_count, ulong object_size, void* array)
 {
     cl_command_queue queue = _command_queue->queue();
     
-    clEnqueueReadBuffer(queue, _mem_object, CL_TRUE, 0, array_count*object_size, array, 0, NULL, NULL);
+    return clEnqueueReadBuffer(queue, _mem_object, CL_TRUE, 0, array_count*object_size, array, 0, NULL, NULL);
 }
 
 cl_mem_flags Memory::convert(const ACCESS_MODE& mode)

@@ -85,9 +85,11 @@ void CommandQueue::program(const int&& index, Program* program)
     _programs[index] = program;
 }
 
-void CommandQueue::execute(int dim_count, ulong* global_size, ulong* local_size)
+void CommandQueue::execute(int dim_count, uint* global_size, uint* local_size)
 {
     char buf[10];
+    size_t globle_size_t[3] = {global_size[0], global_size[1], global_size[2]};
+    size_t local_size_t[3] = {local_size[0], local_size[1], local_size[2]};
     
     for ( int n = 0; n < _programs.size(); ++n ) {
         cl_kernel kernel = _programs[n]->kernel();
@@ -97,11 +99,14 @@ void CommandQueue::execute(int dim_count, ulong* global_size, ulong* local_size)
                                         kernel,
                                         dim_count,
                                         NULL,
-                                        global_size,
-                                        local_size,
+                                        (size_t*)globle_size_t,
+                                        (size_t*)local_size_t,
                                         0,
                                         NULL,
                                         NULL);
+        
+        printf("GlobalSize[%ld]: %d, %d, %d\n", sizeof(uint), global_size[0], global_size[1], global_size[2]);
+        printf("LocalSize[%ld]: %d, %d, %d\n", sizeof(uint), local_size[0], local_size[1], local_size[2]);
         
         sprintf(buf, "%d", n);
         SUCCESS(result, std::string("Enqueue ND Ragne Kerenl [")+buf+"]");
